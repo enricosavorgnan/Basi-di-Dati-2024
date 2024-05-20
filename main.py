@@ -5,7 +5,7 @@ import time
 from datetime import date
 
 # Connessione al database
-vitapharma_db = mysql.connector.connect(host='localhost', user='root', password='Es26112003!!', database='vitapharma')
+vitapharma_db = mysql.connector.connect(host=your_lh_goes_here, user=your_user_goes_here, password=your_pwd_goes_here, database='vitapharma')
 
 # Titolo e sottotitolo
 st.title(':pill: VitaPharmaDB :pill:')
