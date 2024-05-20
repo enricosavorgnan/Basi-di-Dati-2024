@@ -10,4 +10,4 @@ La repository consta di 4 file:
 A riguardo del file main.py:
 1. In generale. Sono previste solamente le operazioni discusse nel documento .pdf consegnato
 2. Riga 1. È necessario installare i pacchetti `mysql-connector-python`, `pandas` e `streamlit` per poter eseguire correttamente il file
-3. Riga 8.  È necessario sostituire ai campi `your_user_goes_here` e `your_pwd_goes_here` i propri username e password, dopo aver creato il database sql.
+3. Riga 8.  È necessario sostituire ai campi `your_lh_goes_here`, `your_user_goes_here` e `your_pwd_goes_here` i propri indirizzi di host, username e password, dopo aver creato il database sql.
