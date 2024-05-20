@@ -1,4 +1,4 @@
-# Basi-di-Dati-2024
+# Basi di Dati 2024
 Progetto conclusivo per l'esame di Basi di Dati, Università di Trieste, a.a. 2023-2024.
 
 La repository consta di 4 file:
