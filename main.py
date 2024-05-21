@@ -5,7 +5,7 @@ import time
 from datetime import date
 
 # Connessione al database
-vitapharma_db = mysql.connector.connect(host=your_lh_goes_here, user=your_user_goes_here, password=your_pwd_goes_here, database='vitapharma')
+vitapharma_db = mysql.connector.connect(host='localhost', user='root', password='Es26112003!!', database='vitapharma')
 
 # Titolo e sottotitolo
 st.title(':pill: VitaPharmaDB :pill:')
@@ -28,12 +28,15 @@ if operation == 'Cerca informazioni sulla ricetta':
     ricetta = st.text_input('Inserisci il codice della ricetta', placeholder='1')
     if st.button('Cerca'):
         cursor = vitapharma_db.cursor()
-        cursor.callproc('infoRicetta', [int(ricetta)])
-        for result in cursor.stored_results():
-            df = pd.DataFrame(result.fetchall())
-            df.columns = ['Codice Ricetta', 'Nome farmaco', 'Prezzo', 'Fascia', 'Armadio', 'Scaffale', 'Generico']
-            df.index += 1
-            st.write(df)
+        try:
+            cursor.callproc('infoRicetta', [int(ricetta)])
+            for result in cursor.stored_results():
+                df = pd.DataFrame(result.fetchall())
+                df.columns = ['Codice Ricetta', 'Nome farmaco', 'Prezzo', 'Fascia', 'Armadio', 'Scaffale', 'Generico']
+                df.index += 1
+                st.write(df)
+        except ValueError as e:
+            st.error(f"Ricetta non trovata!")
 
 # Operazione 2: Inserire un acquisto
 elif operation == 'Inserisci un acquisto':
